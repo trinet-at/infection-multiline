@@ -1,0 +1,21 @@
+{
+    "name": "trinet/infection-multiline",
+    "license": "MIT",
+    "require": {
+        "php": "^7.1",
+        "infection/infection": "dev-master#2e24f03"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Trinet\\InfectionMultiline\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TrinetTest\\InfectionMultiline\\": "tests"
+        }
+    }
+}
