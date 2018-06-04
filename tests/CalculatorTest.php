@@ -13,7 +13,7 @@ class CalculatorTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->calculator =  new Calculator();
+        $this->calculator = new Calculator();
     }
 
     public function testCalculateInMultipleLines(): void
@@ -39,9 +39,18 @@ class CalculatorTest extends TestCase
 
     public function testCalculateInSingleLineFloat(): void
     {
-        $result = $this->calculator->calculateInMultipleLines(10.5);
+        $result = $this->calculator->calculateInSingleLine(10.5);
 
         $this->assertSame(10.5, $result);
     }
 
+    public function testCalculationsAreTheSame(): void
+    {
+        $value = 100;
+
+        $multipleLineResult = $this->calculator->calculateInMultipleLines($value);
+        $singleLineResult = $this->calculator->calculateInSingleLine($value);
+
+        $this->assertSame($multipleLineResult, $singleLineResult);
+    }
 }
